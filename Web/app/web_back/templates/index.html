@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" style="width: 100%;">
+<head>
+  <meta charset="utf-8">
+  <title>ZIHUA - 资料分享站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords">
+  <meta name="description">
+  <script type="text/X-javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/X-javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/css/font.css">
+  <link rel="stylesheet" type="text/css" href="static/css/xadmin.css">
+  <link rel="stylesheet" type="text/css" href="static/css/global.css">
+  <link rel="shortcut icon" type="png" href="/favicon.png" />
+  <link rel="bookmark"  type="png" href="/favicon.png" />
+  <script type="text/X-javascript" src="static/lib/layui/layui.js"></script>
+  <script type="text/X-javascript" src="static/js/Front/index.js"></script>
+  <script type="text/X-javascript" src="static/js/Common/xadmin.js"></script>
+
+</head>
+
+<body>
+
+  <div class="fly-header layui-bg-black">
+    <div class="layui-container">
+      <a class="fly-logo">
+        <img src="../static/imgs/logo.png" alt="layui">
+      </a>
+      <ul class="layui-nav fly-nav layui-hide-xs">
+        <li class="layui-nav-item layui-this">
+          <a href="javascript:;"><i class="iconfont icon-jiaoliu"></i>首页</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"  onclick="alert('请您先登录')"><i class="iconfont icon-iconmingxinganli"></i>图片上传</a>
+        </li>
+        <!-- <li class="layui-nav-item">
+          <a href="#" onclick="alert('请您先登录')"><i class="iconfont icon-ui"></i>设备信息管理</a>
+        </li> -->
+      </ul>
+
+      <ul class="layui-nav fly-nav-user">
+
+        <!-- 未登入的状态 -->
+        <li class="layui-nav-item">
+          <a class="iconfont icon-touxiang layui-hide-xs" href='/user/admin_login'></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href='/user/admin_login'>登录</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href='/user/admin_register'>注册</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <div class="about-content">
+    <div class="about-big-img">
+      <div class="text_box">
+        <div class="text">
+          <h3>**靓瞎你的眼**</h3>
+          <!-- 这是紫华的老婆 -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- about-content -->
+  
+  
+  <!-- footer -->
+  <div class="footer">
+    <div class="line"></div>
+    <p class="copyright">
+      E-MAIL:zihua1022@qq.com<br />
+      TEL:157182*****<br />
+      @2021  ALL Copyright Zihua ICP证：<a href="https://beian.miit.gov.cn/" target="_blank_">粤ICP备2021021588号-1</a>
+    </p>
+    <div class="icon_box">
+      <a href="#"><i class="layui-icon layui-icon-login-wechat weixin-icon"></i></a>
+      <a href="#"><i class="layui-icon layui-icon-login-weibo weibo-icon"></i></a>
+    </div>
+  </div>
+  <!-- end-footer -->
+</body>
+</html>

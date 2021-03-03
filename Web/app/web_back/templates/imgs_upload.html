@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="x-admin-sm">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" >
+    <meta name="description" >
+	<title>图片上传</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/xadmin.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/imgs_upload.css') }}">
+	<script type="text/X-javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/X-javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script type="text/X-javascript" src="{{url_for('static', filename='js/Front/exit.js')}}"></script>
+    <script type="text/X-javascript" src="{{url_for('static', filename='js/Front/imgsUpload.js')}}"></script>
+    <script type="text/X-javascript" src="{{url_for('static', filename='lib/layui/layui.js')}}"></script>
+    <script type="text/X-javascript" src="{{url_for('static', filename='js/Common/xadmin.js')}}"></script>
+</head>
+
+<body>
+  <div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">图片上传</a>
+        <a><cite>图片上传页面</cite></a>
+      </span>
+      <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
+          <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
+      </a>
+  </div>
+  
+  <div class="layui-fluid">
+      <div class="layui-row layui-col-space15">
+          <div class="layui-col-md12">
+              <div class="layui-card">
+                  <div class="layui-card-body ">    
+                        <label style="font-size: 15px;">请选择一个图像文件：</label>
+                        <!-- <button id="select" class="btn btn-primary">(重新)（追加）选择图片</button> -->
+                        <!-- <button id="add" class="btn btn-primary">选择图片</button> -->           
+                        <button type="button" id="add" class="layui-btn">
+                        <i class="iconfont nav_right"></i>选择图片</button>
+                        <input type="file" name="photo" id="file_input" multiple="multiple"/> <!--用input标签并选择type=file，记得带上multiple，不然就只能单选图片了-->
+                        <button type="button" id="upload" class="layui-btn">
+                        <i class="iconfont nav_right"></i>上传</button>       
+                  </div>
+                  
+                  <div class="layui-card-body">
+                    <div class="image_title">
+                      <textarea id="image_title" placeholder="请输入实验名称" type="text/plain" style="width:90%;height:40px;font-size: 15px;"></textarea>
+                    </div>
+                    <div class="imgs_container">
+                    </div>
+                    <div class="image_desc">
+                      <textarea id="image_desc" placeholder="请输入实验描述" type="text/plain" style="width:90%;height:90px;font-size: 15px;"></textarea>
+                    </div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
+</html>
+
+

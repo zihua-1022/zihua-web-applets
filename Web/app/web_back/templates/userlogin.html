@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" class="x-admin-sm">
+<head>
+	<meta charset="UTF-8">
+	<title>用户登录</title>
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <script type="text/X-javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/X-javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/xadmin.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/userlogin.css') }}">
+    <script type="text/X-javascript" src="{{url_for('static', filename='js/Front/verify.js')}}"></script>
+    <script type="text/X-javascript" src="{{url_for('static', filename='js/Front/userLogIn.js')}}"></script>
+    <script type="text/X-javascript" src="{{url_for('static', filename='lib/layui/layui.js')}}"></script>
+    <script type="text/X-javascript" src="{{url_for('static', filename='js/Common/xadmin.js')}}"></script>
+    
+</head>
+<body class="login-bg">
+    
+    <div class="login layui-anim layui-anim-up">
+        <div class="message" >用户登录</div>
+        <div id="darkbannerwrap"></div>
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+          <ul class="layui-tab-title">
+            <li class="layui-this">密码登录</li>
+            <li>短信登录</li>
+          </ul>
+          <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+              <form  class="layui-form" >
+                <hr class="hr15">
+                <input name="userphone" lay-verify="required" placeholder="你的手机号/邮箱" type="text" class="layui-input">
+                <hr class="hr15">
+                <input name="password" lay-verify="required|pwd1Length" placeholder="密码" type="password" class="layui-input">
+                <hr class="hr15">
+                <input name="code" lay-verify="required" placeholder="验证码"  type="text" class="layui-input-inline" style="width:60%;"> 
+                <img src="/get_imageCode " onclick="this.src='/get_imageCode?'+ Math.random()" name="img_code">
+              </form>
+            </div>
+            <div class="layui-tab-item">
+              <form  class="layui-form" >
+                <hr class="hr15">
+                <input name="userphone" lay-verify="required|phoneLength" placeholder="填写常用手机号" type="text" class="layui-input">
+                <hr class="hr15">
+                <div class="layui-inline">
+                  <input name="code" lay-verify="required" placeholder="请输入短信验证码" type="text" class="layui-input" style="width: 80%;">
+                </div>
+                <div class="layui-inline" style="margin-left: -10px;">
+                  <input value="获取验证码" id="sendcode" type="button" onclick="sendMessage()">
+                </div>
+              </form>
+            </div>
+            <hr class="hr15">
+              <a href='/userloss' style="color: rgb(0, 145, 125);">忘记帐号密码？</a>
+              <a href='/user/user_register' style="color: rgb(0, 145, 125);margin-left: 180px;">免费注册</a>
+            <hr class="hr15">
+              <input value="登录" class="layui-input-inline" lay-submit lay-filter="login"  type="button" onclick="logIn()">  
+          </div>
+          <div class="login-others">
+            <div class="title-wrap">
+              <h2>&nbsp&nbsp-----------------第三方账号登录-----------------</h2>
+            </div>
+            <hr class="hr15" >
+            <!-- <a href="https://open.weixin.qq.com/connect/qrconnect?appid=wx7122bbeb40f2b56f&amp;redirect_uri=https://sso.unipus.cn/sso/thirdparty.html?mode=weixin&amp;response_type=code&amp;scope=snsapi_login#wechat_redirect"></a> -->
+              <a href="#">
+                <span class="layui-icon layui-icon-login-wechat" style="font-size: 30px;margin-left:45%;color: rgb(83, 212, 195);"></span>
+              </a>
+          </div>
+        </div>  
+     
+    </div>
+   
+</body>
+</html> 
+
+
+
